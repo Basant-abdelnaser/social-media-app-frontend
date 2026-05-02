@@ -1,10 +1,12 @@
 import { Heart, MessageCircle, Share2 } from "lucide-react";
 import moment from "moment";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const PostCard = ({ post }) => {
   const [mediaUrl, setMediaUrl] = useState(null);
 
+  const navigate = useNavigate();
   useEffect(() => {
     if (post.post_type === "text_with_image") {
       setMediaUrl(post.image_urls);
@@ -32,7 +34,12 @@ const PostCard = ({ post }) => {
   return (
     <div className="bg-white rounded-2xl shadow-sm p-3 lg:max-w-3xl max-w-90 ">
       {/* personal details */}
-      <div className="flex gap-2 items-center ">
+      <div
+        className="flex gap-2 items-center cursor-pointer "
+        onClick={() => {
+          navigate(`/profile/${post.user._id}`);
+        }}
+      >
         <img
           src={post.user.profile_picture}
           alt=""

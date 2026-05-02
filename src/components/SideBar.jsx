@@ -61,14 +61,14 @@ const SideBar = () => {
   return (
     <>
       {/* Top bar (mobile only) */}
-      <div className="sm:hidden flex justify-end p-4 bg-gray-100">
+      <div className="sm:hidden flex justify-end p-4 bg-gray-100 fixed  rounded-3xl">
         <button onClick={() => setOpen(true)}>
           <Menu />
         </button>
       </div>
 
       {/* Desktop Sidebar */}
-      <div className="hidden sm:flex p-5 min-h-screen bg-gray-100 w-72 shadow-4xl flex-col">
+      <div className="hidden sm:flex p-5 min-h-screen bg-gray-100 w-68 shadow-4xl flex-col">
         <SidebarContent MenuItems={MenuItems} handleLogout={handleLogout} />
       </div>
 
@@ -104,7 +104,7 @@ const SideBar = () => {
 
 const SidebarContent = ({ MenuItems, handleLogout, onItemClick }) => {
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-screen fixed w-60 overflow-y-auto">
       {/* Logo */}
       <div>
         <div className="flex gap-2 text-2xl font-bold text-purple-900 py-4 px-3">
@@ -125,9 +125,8 @@ const SidebarContent = ({ MenuItems, handleLogout, onItemClick }) => {
       </div>
 
       {/* user */}
-      <div>
+      <div className="mb-5">
         <hr className="w-full h-1 text-gray-200" />
-
         <div className="flex items-center justify-between">
           <div className="flex gap-2 p-3 items-center">
             <UserButton />
