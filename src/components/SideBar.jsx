@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import React, { useState } from "react";
 import { dummyUserData } from "../assets/vibes-assets/assets/assets";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useClerk, UserButton } from "@clerk/react";
 
 const SideBar = () => {
@@ -22,13 +22,14 @@ const SideBar = () => {
   const menuItemsData = [
     { to: "/", label: "Feed", Icon: House },
     {
-      to: `/messages/${dummyUserData._id}`,
+      to: `/messages`,
       label: "Messages",
       Icon: MessageCircle,
     },
     { to: "/connections", label: "Connections", Icon: UsersRound },
     { to: "/discover", label: "Discover", Icon: Search },
     { to: `/profile/${dummyUserData._id}`, label: "Profile", Icon: User },
+   
   ];
 
   const handleLogout = async () => {
@@ -103,6 +104,8 @@ const SideBar = () => {
 };
 
 const SidebarContent = ({ MenuItems, handleLogout, onItemClick }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-col h-screen fixed w-60 overflow-y-auto">
       {/* Logo */}
@@ -118,7 +121,12 @@ const SidebarContent = ({ MenuItems, handleLogout, onItemClick }) => {
       <div className="flex-1 overflow-y-auto">
         <MenuItems onClick={onItemClick} />
 
-        <button className="w-full p-2 bg-purple-900 rounded-lg flex gap-2 hover:bg-purple-800 transition text-white justify-center items-center cursor-pointer mt-3">
+        <button
+          className="w-full p-2 bg-purple-900 rounded-lg flex gap-2 hover:bg-purple-800 transition text-white justify-center items-center cursor-pointer mt-3"
+          onClick={() => {
+            navigate("/create-post");
+          }}
+        >
           <SquarePlus />
           <span>Create Post</span>
         </button>

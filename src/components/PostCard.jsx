@@ -32,7 +32,7 @@ const PostCard = ({ post }) => {
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-sm p-3 lg:max-w-3xl max-w-90 ">
+    <div className="bg-white rounded-2xl shadow-sm p-3   ">
       {/* personal details */}
       <div
         className="flex gap-2 items-center cursor-pointer "

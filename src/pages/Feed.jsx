@@ -25,7 +25,7 @@ const Feed = () => {
         </div>
         <div className="space-y-6 ">
           {feeds.map((post) => (
-            <div key={post._id}>
+            <div key={post._id} className="max-w-3xl">
               <PostCard post={post} />
             </div>
           ))}

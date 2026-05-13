@@ -24,22 +24,75 @@ export const menuItemsData = [
 ];
 
 export const dummyUserData = {
-    "_id": "user_2zdFoZib5lNr614LgkONdD8WG32",
-    "email": "admin@example.com",
-    "full_name": "John Warren",
-    "username": "john_warren",
-    "bio": "🌍 Dreamer | 📚 Learner | 🚀 Doer\r\nExploring life one step at a time.\r\n✨ Staying curious. Creating with purpose.",
-    "profile_picture": sample_profile,
-    "cover_photo": sample_cover,
-    "location": "New York, NY",
-    "followers": ["user_2", "user_3"],
-    "following": ["user_2", "user_3"],
-    "connections": ["user_2", "user_3"],
-    "posts": [],
-    "is_verified": true,
-    "createdAt": "2025-07-09T09:26:59.231Z",
-    "updatedAt": "2025-07-21T06:56:50.017Z",
-}
+  _id: "user_2zdFoZib5lNr614LgkONdD8WG32",
+  email: "admin@example.com",
+  full_name: "John Warren",
+  username: "john_warren",
+  bio: "🌍 Dreamer | 📚 Learner | 🚀 Doer\r\nExploring life one step at a time.\r\n✨ Staying curious. Creating with purpose.",
+  profile_picture: sample_profile,
+  cover_photo: sample_cover,
+  location: "New York, NY",
+  followers: ["user_2", "user_3"],
+  following: ["user_2", "user_3"],
+  connections: ["user_2", "user_3"],
+  posts: [
+    {
+      _id: "68773e977db16954a783839c",
+      user: {
+        _id: "user_2zdFoZib5lNr614LgkONdD8WG32",
+        full_name: "John Warren",
+        username: "john_warren",
+        profile_picture: sample_profile,
+      },
+      content:
+        "We're a small #team with a big vision — working day and night to turn dreams into products, and #products into something people love.",
+      image_urls: [
+        "https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg",
+      ],
+      post_type: "text_with_image",
+      likes_count: [],
+      createdAt: "2025-07-16T05:54:31.191Z",
+      updatedAt: "2025-07-16T05:54:31.191Z",
+    },
+    {
+      _id: "68773e977db16954a783839c",
+      user: {
+        _id: "user_2zdFoZib5lNr614LgkONdD8WG32",
+        full_name: "John Warren",
+        username: "john_warren",
+        profile_picture: sample_profile,
+      },
+      content:
+        "We're a small #team with a big vision — working day and night to turn dreams into products, and #products into something people love.",
+      image_urls: [
+        "https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg",
+      ],
+      post_type: "text_with_image",
+      likes_count: [],
+      createdAt: "2025-07-16T05:54:31.191Z",
+      updatedAt: "2025-07-16T05:54:31.191Z",
+    },
+    {
+      _id: "686e6d0407845749500c24cd",
+      user: {
+        _id: "user_2zdFoZib5lNr614LgkONdD8WG32",
+        full_name: "John Warren",
+        username: "john_warren",
+        profile_picture: sample_profile,
+      },
+      content:
+        "Unlock your potential—every small step counts. Stay consistent, stay focused, and trust the process. Growth takes time, but every day is a new chance to be better than yesterday. 🌱✨\r\n\r\n#Motivation #GrowthMindset #DailyInspiration #StayFocused #LevelUp #PositiveVibes #KeepGoing #SelfImprovement #MindsetMatters #SuccessJourney",
+      image_urls: [],
+      post_type: "text",
+      likes_count: [],
+      createdAt: "2025-07-09T13:22:12.601Z",
+      updatedAt: "2025-07-09T13:22:12.601Z",
+    },
+  ],
+  is_verified: true,
+  createdAt: "2025-07-09T09:26:59.231Z",
+  updatedAt: "2025-07-21T06:56:50.017Z",
+};
 
 const dummyUser2Data = {
     ...dummyUserData,
